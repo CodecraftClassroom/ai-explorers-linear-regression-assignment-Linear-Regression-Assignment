@@ -26,7 +26,6 @@ class TestUnit(unittest.TestCase):
         self.assertIn("TRIP_MINUTES", modified_df.columns)
         self.assertTrue((modified_df["TRIP_MINUTES"] == modified_df["TRIP_SECONDS"] / 60).all())
 
-
     def test_prediction_output_shape(self):
         model, _ = tm.run_experiment(self.df, ["TRIP_MILES", "TRIP_MINUTES"], "FARE", 0.001, 5, 10)
         predictions = tm.predict_fare(model, self.df, ["TRIP_MILES", "TRIP_MINUTES"], "FARE", 10)

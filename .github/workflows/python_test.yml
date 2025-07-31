@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install tensorflow pandas numpy keras pytest
+          pip install tensorflow pandas numpy keras pytest matplotlib
       - name: Run tests
         run: |
           pytest test_main.py
